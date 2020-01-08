@@ -27,7 +27,9 @@ public class RotateArray189 {
     }
     public static void rotate_Method_1(int[] nums, int k) {
         int lenArray = nums.length;
-        k = k % lenArray;
+        if (k > lenArray) {
+            k = k % lenArray;
+        }
         for (int i = 0; i < k; i++) {
             int moveItem = nums[lenArray - 1];
             for (int j = 0; j < lenArray - 1; j++) {
