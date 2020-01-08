@@ -11,7 +11,9 @@ public class RotateArray189 {
     }
     public static void rotate_Method_2(int[] nums, int k) {
         int lenArray = nums.length;
-        k = k % lenArray;
+        if (k > lenArray) {
+            k = k % lenArray;
+        }
         reverseArray(nums, 0, lenArray - 1);
         reverseArray(nums, 0, k - 1);
         reverseArray(nums, k, lenArray - 1);
